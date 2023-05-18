@@ -49,6 +49,7 @@
 
 .menu-link:hover {
     opacity: 1;
+    cursor: pointer;
 }
 
 .login-icon {

@@ -18,7 +18,13 @@ import { BuscadorComponent } from './buscador/buscador.component';
 import { CarroCardComponent } from './carro-card/carro-card.component';
 import { CarroValorComponent } from './carro-valor/carro-valor.component';
 import { CarroDetalhesComponent } from './carro-detalhes/carro-detalhes.component';
-import { CarroNomeComponent } from './carro-nome/carro-nome.component'
+import { CarroNomeComponent } from './carro-nome/carro-nome.component';
+import { LoginFormComponent } from './login-form/login-form.component'
+import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +35,8 @@ import { CarroNomeComponent } from './carro-nome/carro-nome.component'
     CarroCardComponent,
     CarroValorComponent,
     CarroDetalhesComponent,
-    CarroNomeComponent
+    CarroNomeComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,11 @@ import { CarroNomeComponent } from './carro-nome/carro-nome.component'
     MatToolbarModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
