@@ -1,0 +1,21 @@
+<h2>Meus carros</h2>
+<section class="container">
+  <div class="carros">
+    <div class="carro-panel col-sm-6 col-lg-4 col-xl-3" *ngFor="let carro of carros">
+      <mat-card class="carro-card">
+        <div class="card-header">
+          <img mat-card-image src={{carro.foto}}/>
+        </div>
+        <div class="card-body">
+          <h2 class="carro-nome">{{carro.marca}} {{carro.nome}}</h2>
+          <p class="carro-detalhes">{{carro.modelo}} • {{carro.km}} km</p>
+          <div class="linha-valor">
+            <span class="valor-highlight">
+              R$ {{carro.valor}}
+            </span>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</section>

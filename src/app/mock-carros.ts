@@ -1,0 +1,10 @@
+import { Carro } from "./models/carro";
+
+export const CARROS: Carro[] = [
+    {id: 1, nome: "uno", marca: "fiat", modelo: "2001", foto: "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjQ1MDcwL0VYVEVSSU9SLWZyb250U2lkZVBpbG90RGlzdGFuY2UtMTY4NDI2MzkwNjc2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1NDAsImhlaWdodCI6MzEwfX19", valor: 10000, km: 24892},
+    {id: 2, nome: "uno", marca: "fiat", modelo: "2001", foto: "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjQ1MDcwL0VYVEVSSU9SLWZyb250U2lkZVBpbG90RGlzdGFuY2UtMTY4NDI2MzkwNjc2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1NDAsImhlaWdodCI6MzEwfX19", valor: 10000, km: 2341},
+    {id: 3, nome: "uno", marca: "fiat", modelo: "2001", foto: "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjQ1MDcwL0VYVEVSSU9SLWZyb250U2lkZVBpbG90RGlzdGFuY2UtMTY4NDI2MzkwNjc2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1NDAsImhlaWdodCI6MzEwfX19", valor: 10000, km: 6534},
+    {id: 4, nome: "uno", marca: "fiat", modelo: "2001", foto: "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjQ1MDcwL0VYVEVSSU9SLWZyb250U2lkZVBpbG90RGlzdGFuY2UtMTY4NDI2MzkwNjc2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1NDAsImhlaWdodCI6MzEwfX19", valor: 10000, km: 53446},
+    {id: 5, nome: "uno", marca: "fiat", modelo: "2001", foto: "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjQ1MDcwL0VYVEVSSU9SLWZyb250U2lkZVBpbG90RGlzdGFuY2UtMTY4NDI2MzkwNjc2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1NDAsImhlaWdodCI6MzEwfX19", valor: 10000, km: 523456},
+    {id: 6, nome: "uno", marca: "fiat", modelo: "2001", foto: "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjQ1MDcwL0VYVEVSSU9SLWZyb250U2lkZVBpbG90RGlzdGFuY2UtMTY4NDI2MzkwNjc2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1NDAsImhlaWdodCI6MzEwfX19", valor: 10000, km: 3464},
+]
