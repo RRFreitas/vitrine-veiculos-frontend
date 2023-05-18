@@ -4,20 +4,7 @@
   </div>
   <div class="carros">
     <div class="carro-panel col-sm-6 col-lg-4 col-xl-3" *ngFor="let carro of carros">
-      <mat-card class="carro-card">
-        <div class="card-header">
-          <img mat-card-image src={{carro.foto}}/>
-        </div>
-        <div class="card-body">
-          <h2 class="carro-nome">{{carro.marca}} {{carro.nome}}</h2>
-          <p class="carro-detalhes">{{carro.ano}} • {{carro.km | number: '1.0-0'}} km • {{carro.estado}}</p>
-          <div class="linha-valor">
-            <span class="valor-highlight">
-              {{carro.valor | currency: 'BRL':'symbol':'4.0-0'}}
-            </span>
-          </div>
-        </div>
-      </mat-card>
+      <app-carro-card [carro]="carro"></app-carro-card>
     </div>
   </div>
 </section>

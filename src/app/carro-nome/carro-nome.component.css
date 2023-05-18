@@ -1,0 +1,10 @@
+.carro-nome{
+    font-size: 1rem;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-inline-end: 1rem;
+    margin-inline-start: 1rem;
+    margin-block-end: 0.5rem;
+}

@@ -12,11 +12,6 @@
     justify-content: center;
 }
 
-.carro-card:hover {
-    box-shadow: 0 1px 10px 0 rgba(70,70,70,.15), 0 2px 2px 0 rgba(70,70,70,.15), 0 3px 2px -2px rgba(70,70,70,.15);
-    cursor: pointer;
-}
-
 @media(min-width: 576px) {
     .col-sm-6 {
         flex: 0 0 47%;
@@ -36,46 +31,6 @@
         flex: 0 0 23%;
         max-width: 23%;
     }
-}
-
-.card-body .carro-detalhes {
-    font-size: 0.875rem;
-    color: #898989;
-    font-weight: 500;
-}
-
-.carro-nome {
-    font-size: 1rem;
-    line-height: 1;
-}
-
-.carro-detalhes, .carro-nome{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-inline-end: 1rem;
-    margin-inline-start: 1rem;
-    margin-block-end: 0.5rem;
-}
-
-.linha-valor {
-    position: relative;
-    padding-inline-end: 1rem;
-    padding-inline-start: 1rem;
-    padding-block-start: 1.5rem;
-}
-
-.valor-highlight {
-    line-height: 1.5;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #3374db;
-    margin-inline-end: 0.5rem;
-}
-
-.card-header img{
-    max-width: 100%;
-    border-radius: 5px 5px 0px 0px;
 }
 
 .title-container {

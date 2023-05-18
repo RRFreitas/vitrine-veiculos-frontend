@@ -1,0 +1,10 @@
+<mat-card *ngIf="carro" class="carro-card">
+  <div class="card-header">
+      <img mat-card-image src={{carro.foto}}/>
+  </div>
+  <div class="card-body">
+      <app-carro-nome [carro]="carro"></app-carro-nome>
+      <app-carro-detalhes [carro]="carro"></app-carro-detalhes>
+      <app-carro-valor [valor]="carro.valor"></app-carro-valor>
+  </div>
+</mat-card>

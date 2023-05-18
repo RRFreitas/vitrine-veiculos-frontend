@@ -1,0 +1,11 @@
+.carro-detalhes {
+    font-size: 0.875rem;
+    color: #898989;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-inline-end: 1rem;
+    margin-inline-start: 1rem;
+    margin-block-end: 0.5rem;
+}

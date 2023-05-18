@@ -1,0 +1,9 @@
+.carro-card:hover {
+    box-shadow: 0 1px 10px 0 rgba(70,70,70,.15), 0 2px 2px 0 rgba(70,70,70,.15), 0 3px 2px -2px rgba(70,70,70,.15);
+    cursor: pointer;
+}
+
+.card-header img{
+    max-width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}

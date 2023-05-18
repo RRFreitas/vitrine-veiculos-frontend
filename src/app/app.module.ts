@@ -14,14 +14,22 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { NavbarComponent } from './navbar/navbar.component';
-import { BuscadorComponent } from './buscador/buscador.component'
+import { BuscadorComponent } from './buscador/buscador.component';
+import { CarroCardComponent } from './carro-card/carro-card.component';
+import { CarroValorComponent } from './carro-valor/carro-valor.component';
+import { CarroDetalhesComponent } from './carro-detalhes/carro-detalhes.component';
+import { CarroNomeComponent } from './carro-nome/carro-nome.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CarrosComponent,
     NavbarComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    CarroCardComponent,
+    CarroValorComponent,
+    CarroDetalhesComponent,
+    CarroNomeComponent
   ],
   imports: [
     BrowserModule,
