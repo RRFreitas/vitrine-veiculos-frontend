@@ -9,13 +9,19 @@ import { CarrosComponent } from './carros/carros.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar'
-import { NavbarComponent } from './navbar/navbar.component'
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+import { NavbarComponent } from './navbar/navbar.component';
+import { BuscadorComponent } from './buscador/buscador.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CarrosComponent,
-    NavbarComponent
+    NavbarComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +29,10 @@ import { NavbarComponent } from './navbar/navbar.component'
     BrowserAnimationsModule,
     FormsModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,20 @@
+.container-navbar {
+    width: 95%;
+    display: flex;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+.subcontainer {
+    width: 100%;
+    display: flex;
+    justify-items: center;
+}
+
 .logo {
-    width: 4.75rem;
+    width: 7rem;
+    align-items: center;
+    display: flex;
 }
 
 .spacer {
@@ -10,7 +25,6 @@
 
 .navbar-menu {
     display: flex;
-    width: auto;
 }
 
 .menu {
@@ -30,8 +44,13 @@
     line-height: normal;
     opacity: .85;
     padding-inline-end: 2rem;
+    font-weight: 400;
 }
 
 .menu-link:hover {
     opacity: 1;
+}
+
+.login-icon {
+    margin-block-end: -5px;
 }

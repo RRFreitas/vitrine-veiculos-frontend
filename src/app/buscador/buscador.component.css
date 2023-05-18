@@ -1,0 +1,16 @@
+.container-busca {
+    background-color: #3374db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.barra-busca {
+    width: 95%;
+}
