@@ -1,6 +1,9 @@
 .title, mat-dialog-content {
   display: flex;
   justify-content: center;
+  color: #333;
+  opacity: .8;
+  font-weight: 300;
 }
 
 mat-form-field {
@@ -8,7 +11,37 @@ mat-form-field {
   min-width: 300px;
 }
 
+.button button{
+  width: 100%;
+}
+
 .button {
+  margin-block-start: 10px;
+}
+
+.logo {
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 15px;
+}
+
+.logo svg {
+  width: 10rem;
+}
+
+p {
+  margin: 0 0 0 0;
+}
+
+.reset-pass a{
+  text-decoration: none;
+  color: #333;
+  font-size: 0.8rem;
+  opacity: .7;
+}
+
+.reset-pass a:hover {
+  opacity: 1;
 }

@@ -21,6 +21,7 @@ export class LoginFormComponent {
   }
 
   login() {
+    console.log("logging");
     const val = this.form.value;
 
     if(val.email && val.senha) {
