@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Carro } from '../models/carro';
-import { CARROS } from '../mock-carros';
+import { CARROS } from '../../mock-carros';
 
 @Component({
   selector: 'app-carros',
