@@ -8,13 +8,12 @@
     <form [formGroup]="form" (ngSubmit)="login()">
         <p>
           <mat-form-field>
-            <input subscriptSizing="dynamic" type="email" matInput placeholder="E-mail" formControlName="email">
+            <input required subscriptSizing="dynamic" type="input" matInput placeholder="Usuário" formControlName="username">
           </mat-form-field>
         </p>
-
         <p>
           <mat-form-field>
-            <input subscriptSizing="dynamic" type="password" matInput placeholder="Senha" formControlName="senha">
+            <input subscriptSizing="dynamic" type="password" matInput placeholder="Senha" formControlName="password">
           </mat-form-field>
         </p>
         <p class="reset-pass">
@@ -22,13 +21,8 @@
             Esqueceu a senha?
           </a>
         </p>
-
-        <!--<p *ngIf="error" class="error">
-          {{ error }}
-        </p>-->
-
         <div class="button">
-          <button type="submit" mat-stroked-button>Continuar</button>
+          <button [disabled]="username?.invalid || password?.invalid" type="submit" mat-stroked-button>Continuar</button>
         </div>
 
       </form>

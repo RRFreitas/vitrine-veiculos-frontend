@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from 'src/app/services/auth.service';
 import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
@@ -9,13 +10,23 @@ import { LoginFormComponent } from '../login-form/login-form.component';
 })
 export class NavbarComponent {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private authService : AuthService) {}
 
-  openDialog(): void {
+  public openDialog(): void {
     const dialogRef = this.dialog.open(LoginFormComponent, {});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  public isLoggedIn() {
+    return this.authService.isLoggedIn();
+  }
+
+  public logout() {
+    this.authService.logout()
+    console.log("Logged out");
+    window.location.reload();
   }
 }

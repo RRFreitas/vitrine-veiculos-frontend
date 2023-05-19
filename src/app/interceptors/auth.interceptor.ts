@@ -3,7 +3,7 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -16,6 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
     const idToken = localStorage.getItem("id_token");
 
     if(idToken) {
+      console.log("Oi")
       const cloned = request.clone({
         headers: request.headers.set("Authorization",
           "Bearer " + idToken)
@@ -23,7 +24,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
       return next.handle(cloned);
     }
-
     return next.handle(request);
   }
 }
+

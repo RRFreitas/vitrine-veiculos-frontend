@@ -1,6 +1,13 @@
 <section class="container">
   <div class="title-container">
-    <h1 class="title">CARROS USADOS</h1>
+      <h1 class="title">CARROS USADOS</h1>
+      <ng-template [ngIf]="isLoggedIn()">
+        <button mat-button class="add-button" aria-label="Example icon button with a home icon">
+          <mat-icon aria-hidden="false" aria-label="Add icon" fontIcon="add">
+          </mat-icon>
+          Adicionar Carro
+        </button>
+      </ng-template> 
   </div>
   <div class="carros">
     <div class="carro-panel col-sm-6 col-lg-4 col-xl-3" *ngFor="let carro of carros">

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../../services/auth.service';
 
@@ -15,26 +15,33 @@ export class LoginFormComponent {
     public dialogRef: MatDialogRef<LoginFormComponent>,
     private fb: FormBuilder, private authService: AuthService) {
     this.form = this.fb.group({
-      email: ['', Validators.required],
-      senha: ['', Validators.required]
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     })
   }
 
-  login() {
-    console.log("logging");
-    const val = this.form.value;
+  public login() : void {
+    const value = this.form.value;
 
-    if(val.email && val.senha) {
-      this.authService.login(val.email, val.senha)
-        .subscribe(
-          () => {
-            console.log("User is logged in");
-          }
-        );
-    }
+    this.authService.login(value.username, value.password)
+      .subscribe(
+        a => {
+          console.log("User is logged in");
+          window.location.reload();
+        }
+      );
   }
 
-  onNoClick(): void {
+  public onNoClick(): void {
     this.dialogRef.close();
   }
+
+  get username() : AbstractControl<any,any> | null {
+    return this.form.get('username'); 
+  }
+
+  get password() : AbstractControl<any,any> | null {
+    return this.form.get('password'); 
+  }
+
 }
