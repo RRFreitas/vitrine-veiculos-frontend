@@ -2,24 +2,21 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Carro } from '../models/carro';
 import { environment } from 'src/environments/environment';
-import { catchError } from 'rxjs';
-
-const API_URL : string = environment.API_URL;
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarrosService {
+  API_URL: string = environment.API_URL + '/carros/'
 
   constructor(private http: HttpClient) { }
 
-  public getCarros() {
-    return this.http.get<Carro[]>(API_URL + '/carros/')
-      .pipe(catchError(async e => console.log(e)));
+  getCarros() : Observable<Carro> {
+    return this.http.get<Carro>(this.API_URL);
   }
 
-  public postCarro(carro: Carro) {
-    return this.http.post<Carro>(API_URL + '/carros/', carro)
-      .pipe(catchError(async e => console.log(e)));
+  postCarro(carro: Carro) {
+    return this.http.post<Carro>(this.API_URL, carro);
   }
 }

@@ -1,0 +1,53 @@
+<div class="title">
+  <h2 mat-dialog-title>Carro</h2>
+</div>
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="createCarro()">
+    <div class="form-line">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input required subscriptSizing="dynamic" type="input" matInput placeholder="Nome" formControlName="nome">
+      </mat-form-field>
+      <span class="spacer"></span>
+      <mat-form-field>
+        <mat-label>Marca</mat-label>
+        <input subscriptSizing="dynamic" type="input" matInput placeholder="Marca" formControlName="marca">
+      </mat-form-field>
+    </div>
+    <div class="form-line">
+      <mat-form-field>
+        <mat-label>Ano</mat-label>
+        <input required subscriptSizing="dynamic" type="number" matInput placeholder="Ano (Ex: 2020)" formControlName="ano">
+      </mat-form-field>
+      <span class="spacer"></span>
+      <mat-form-field>
+        <mat-label>Km</mat-label>
+        <input subscriptSizing="dynamic" type="number" matInput placeholder="Quilometragem (Ex: 1300)" formControlName="km">
+      </mat-form-field>
+    </div>
+    <div class="form-line">
+      <mat-form-field>
+        <mat-label>Estado</mat-label>
+        <input required subscriptSizing="dynamic" type="input" matInput placeholder="Estado" formControlName="estado">
+      </mat-form-field>
+      <span class="spacer"></span>
+      <mat-form-field>
+        <mat-label>Valor</mat-label>
+        <input subscriptSizing="dynamic" type="number" matInput placeholder="Valor" formControlName="valor">
+      </mat-form-field>
+    </div>
+    <div class="form-line">
+      <mat-form-field>
+        <mat-label>Foto</mat-label>
+        <input subscriptSizing="dynamic" type="input" matInput placeholder="foto" formControlName="foto">
+      </mat-form-field>
+    </div>
+    <div class="button">
+      <button [disabled]="nome?.invalid || marca?.invalid" type="submit" mat-stroked-button>Continuar</button>
+    </div>
+  </form>
+</div>
+<!--// nome marca
+// ano km
+// estado valor
+// foto-->

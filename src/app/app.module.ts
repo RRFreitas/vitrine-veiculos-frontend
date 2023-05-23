@@ -27,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { CarroFormComponent } from './components/carro-form/carro-form.component';
 
 const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
@@ -42,7 +43,8 @@ const httpInterceptorProviders = [
     CarroValorComponent,
     CarroDetalhesComponent,
     CarroNomeComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    CarroFormComponent
   ],
   imports: [
     BrowserModule,

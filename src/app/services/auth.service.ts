@@ -13,8 +13,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  public login(username:string, password:string) {
-    return this.http.post<User>(API_URL + '/token/', {username, password})
+  public login(user: User) {
+    return this.http.post<User>(API_URL + '/token/', user)
       .pipe(tap(this.setSession)).pipe(catchError(async e => console.log(e.statusText)));
   }
 

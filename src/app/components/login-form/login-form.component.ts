@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { User } from 'src/app/models/user';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -13,17 +14,20 @@ export class LoginFormComponent {
 
   constructor(
     public dialogRef: MatDialogRef<LoginFormComponent>,
-    private fb: FormBuilder, private authService: AuthService) {
-    this.form = this.fb.group({
+    private fb: FormBuilder,
+    private authService: AuthService) {
+    
+      this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
+    
     })
   }
 
   public login() : void {
-    const value = this.form.value;
+    const user: User = this.form.value;
 
-    this.authService.login(value.username, value.password)
+    this.authService.login(user)
       .subscribe(
         a => {
           console.log("User is logged in");

@@ -2,7 +2,7 @@
   <div class="title-container">
       <h1 class="title">CARROS USADOS</h1>
       <ng-template [ngIf]="isLoggedIn()">
-        <button mat-button class="add-button" aria-label="Example icon button with a home icon">
+        <button mat-button class="add-button" aria-label="Example icon button with a home icon" (click)="openCarroForm()">
           <mat-icon aria-hidden="false" aria-label="Add icon" fontIcon="add">
           </mat-icon>
           Adicionar Carro
