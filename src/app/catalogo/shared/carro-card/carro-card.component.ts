@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Carro } from '../../models/carro';
-import { CarroFormComponent } from '../carro-form/carro-form.component';
+import { Carro } from '../../../models/carro';
+import { CarroFormComponent } from '../../carro-form/carro-form.component';
 
 @Component({
   selector: 'app-carro-card',

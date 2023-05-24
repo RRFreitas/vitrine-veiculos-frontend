@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Carro } from '../models/carro';
+import { Carro } from '../../models/carro';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
@@ -12,8 +12,8 @@ export class CarrosService {
 
   constructor(private http: HttpClient) { }
 
-  getCarros() : Observable<Carro> {
-    return this.http.get<Carro>(this.API_URL);
+  getCarros() : Observable<Carro[]> {
+    return this.http.get<Carro[]>(this.API_URL);
   }
 
   postCarro(carro: Carro) {
