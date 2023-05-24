@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { MatDialogRef } from '@angular/material/dialog';
 import { catchError, retry, throwError } from 'rxjs';
 import { User } from 'src/app/models/user';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login-form',

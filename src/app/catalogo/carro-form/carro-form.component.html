@@ -5,49 +5,26 @@
   <div mat-dialog-content>
     <form [formGroup]="form" (ngSubmit)="saveCarro()">
       <div class="form-line">
-        <mat-form-field color="primary">
-          <mat-label>Marca</mat-label>
-          <input color="primary" subscriptSizing="dynamic" type="input" matInput placeholder="Ex. Fiat" formControlName="marca">
-        </mat-form-field>
+        <app-input-field [control]="marca" label="Marca" placeholder="Ex. Fiat" />
         <span class="spacer"></span>
-        <mat-form-field>
-          <mat-label>Nome</mat-label>
-          <input required subscriptSizing="dynamic" type="input" matInput placeholder="Ex. Uno" formControlName="nome">
-        </mat-form-field>
+        <app-input-field [control]="nome" label="Nome" placeholder="Ex. Uno" />
       </div>
       <div class="form-line">
-        <mat-form-field>
-          <mat-label>Ano</mat-label>
-          <input required subscriptSizing="dynamic" type="number" matInput placeholder="Ex. 2023" formControlName="ano">
-        </mat-form-field>
+        <app-input-field [control]="ano" label="Ano" placeholder="Ex. 2023" type="number" />
         <span class="spacer"></span>
-        <mat-form-field>
-          <mat-label>Km</mat-label>
-          <input subscriptSizing="dynamic" type="number" matInput placeholder="Ex. 1300" formControlName="km">
-        </mat-form-field>
+        <app-input-field [control]="km" label="Km" placeholder="Ex. 1300" type="number"/>
       </div>
       <div class="form-line">
-        <mat-form-field>
-          <mat-label>Estado</mat-label>
-          <input required subscriptSizing="dynamic" type="input" matInput placeholder="Ex. São Paulo" formControlName="estado">
-        </mat-form-field>
+        <app-input-field [control]="estado" label="Estado" placeholder="Estado"/>
         <span class="spacer"></span>
-        <mat-form-field>
-          <mat-label>Valor</mat-label>
-          <input subscriptSizing="dynamic" type="number" matInput placeholder="Ex. 70000" formControlName="valor">
-          <mat-icon matSuffix>attach_money</mat-icon>
-        </mat-form-field>
+        <app-input-field [control]="valor" label="Valor" placeholder="Ex. 70000" iconName="attach_money" />
       </div>
       <div class="form-line">
-        <mat-form-field>
-          <mat-label>Foto URL</mat-label>
-          <input subscriptSizing="dynamic" type="input" matInput placeholder="Ex. https://..." formControlName="foto">
-          <mat-icon matSuffix>photo</mat-icon>
-        </mat-form-field>
+        <app-input-field [control]="foto" label="Foto URL" placeholder="Ex. https://..." iconName="photo" />
       </div>
       <div class="actions">
         <button color="warn" (click)="deleteCarro()" mat-button>Excluir</button>
-        <button [disabled]="!isValid()" type="submit" mat-stroked-button>Salvar</button>
+        <button [disabled]="!form.valid" type="submit" mat-stroked-button>Salvar</button>
       </div>
     </form>
   </div>

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { catchError, retry, throwError } from 'rxjs';
 import { Carro } from 'src/app/models/carro';
-import { AuthService } from 'src/app/services/auth.service';
-import { CarrosService } from 'src/app/services/carros.service';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { CarrosService } from 'src/app/catalogo/services/carros.service';
 import { CarroFormComponent } from '../carro-form/carro-form.component';
 
 @Component({

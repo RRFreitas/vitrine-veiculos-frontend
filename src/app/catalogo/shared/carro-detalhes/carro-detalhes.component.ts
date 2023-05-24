@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Carro } from '../../models/carro';
+import { Carro } from 'src/app/models/carro';
 
 @Component({
   selector: 'app-carro-detalhes',
