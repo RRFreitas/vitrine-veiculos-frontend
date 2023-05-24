@@ -19,4 +19,12 @@ export class CarrosService {
   postCarro(carro: Carro) {
     return this.http.post<Carro>(this.API_URL, carro);
   }
+
+  putCarro(carroId: number, carro: Carro) {
+    return this.http.put<Carro>(this.API_URL + carroId + "/", carro);
+  }
+
+  deleteCarro(carroId: number) {
+    return this.http.delete<Carro>(this.API_URL + carroId + "/");
+  }
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import { catchError, tap } from 'rxjs';
+import { tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 const API_URL : string = environment.API_URL;
@@ -15,7 +15,7 @@ export class AuthService {
 
   public login(user: User) {
     return this.http.post<User>(API_URL + '/token/', user)
-      .pipe(tap(this.setSession)).pipe(catchError(async e => console.log(e.statusText)));
+      .pipe(tap(this.setSession));
   }
 
   private setSession(authResult:any) {

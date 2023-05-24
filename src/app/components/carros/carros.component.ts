@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Carro } from 'src/app/models/carro';
 import { AuthService } from 'src/app/services/auth.service';
 import { CarrosService } from 'src/app/services/carros.service';
-import { CARROS } from '../../mock-carros';
+import { CARROS } from '../../mocks/mock-carros';
 import { CarroFormComponent } from '../carro-form/carro-form.component';
 
 @Component({

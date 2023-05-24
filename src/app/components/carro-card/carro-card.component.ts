@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Carro } from '../../models/carro';
+import { CarroFormComponent } from '../carro-form/carro-form.component';
 
 @Component({
   selector: 'app-carro-card',
@@ -8,4 +10,18 @@ import { Carro } from '../../models/carro';
 })
 export class CarroCardComponent {
   @Input() carro?: Carro;
+
+  constructor(public dialog: MatDialog) {}
+
+  public openCarroForm(): void {
+    const dialogRef = this.dialog.open(CarroFormComponent, {
+      data: {
+        carro: this.carro
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }

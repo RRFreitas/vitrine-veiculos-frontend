@@ -13,3 +13,17 @@ mat-form-field {
     flex-grow: 1;
     min-width: 3px;
 }
+
+.dialog {
+    background-color: whitesmoke;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions button {
+    min-width: 50px;
+    width: 30%;
+}

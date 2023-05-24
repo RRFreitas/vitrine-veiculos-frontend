@@ -1,4 +1,4 @@
-import { Carro } from "./models/carro";
+import { Carro } from "../models/carro";
 
 export const CARROS: Carro[] = [
     {id: 1, nome: "uno", marca: "fiat", ano: 2001, foto: "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjQ1MDcwL0VYVEVSSU9SLWZyb250U2lkZVBpbG90RGlzdGFuY2UtMTY4NDI2MzkwNjc2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1NDAsImhlaWdodCI6MzEwfX19", valor: 10000, km: 24892, estado: "São Paulo"},

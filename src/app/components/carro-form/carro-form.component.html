@@ -1,53 +1,54 @@
-<div class="title">
-  <h2 mat-dialog-title>Carro</h2>
+<div class="dialog">
+  <div class="title">
+    <h2 mat-dialog-title>{{this.isCreated ? "Atualizar" : "Inserir"}} Carro</h2>
+  </div>
+  <div mat-dialog-content>
+    <form [formGroup]="form" (ngSubmit)="saveCarro()">
+      <div class="form-line">
+        <mat-form-field color="primary">
+          <mat-label>Marca</mat-label>
+          <input color="primary" subscriptSizing="dynamic" type="input" matInput placeholder="Ex. Fiat" formControlName="marca">
+        </mat-form-field>
+        <span class="spacer"></span>
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input required subscriptSizing="dynamic" type="input" matInput placeholder="Ex. Uno" formControlName="nome">
+        </mat-form-field>
+      </div>
+      <div class="form-line">
+        <mat-form-field>
+          <mat-label>Ano</mat-label>
+          <input required subscriptSizing="dynamic" type="number" matInput placeholder="Ex. 2023" formControlName="ano">
+        </mat-form-field>
+        <span class="spacer"></span>
+        <mat-form-field>
+          <mat-label>Km</mat-label>
+          <input subscriptSizing="dynamic" type="number" matInput placeholder="Ex. 1300" formControlName="km">
+        </mat-form-field>
+      </div>
+      <div class="form-line">
+        <mat-form-field>
+          <mat-label>Estado</mat-label>
+          <input required subscriptSizing="dynamic" type="input" matInput placeholder="Ex. São Paulo" formControlName="estado">
+        </mat-form-field>
+        <span class="spacer"></span>
+        <mat-form-field>
+          <mat-label>Valor</mat-label>
+          <input subscriptSizing="dynamic" type="number" matInput placeholder="Ex. 70000" formControlName="valor">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-line">
+        <mat-form-field>
+          <mat-label>Foto URL</mat-label>
+          <input subscriptSizing="dynamic" type="input" matInput placeholder="Ex. https://..." formControlName="foto">
+          <mat-icon matSuffix>photo</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="actions">
+        <button color="warn" (click)="deleteCarro()" mat-button>Excluir</button>
+        <button [disabled]="!isValid()" type="submit" mat-stroked-button>Salvar</button>
+      </div>
+    </form>
+  </div>
 </div>
-<div mat-dialog-content>
-  <form [formGroup]="form" (ngSubmit)="createCarro()">
-    <div class="form-line">
-      <mat-form-field>
-        <mat-label>Nome</mat-label>
-        <input required subscriptSizing="dynamic" type="input" matInput placeholder="Nome" formControlName="nome">
-      </mat-form-field>
-      <span class="spacer"></span>
-      <mat-form-field>
-        <mat-label>Marca</mat-label>
-        <input subscriptSizing="dynamic" type="input" matInput placeholder="Marca" formControlName="marca">
-      </mat-form-field>
-    </div>
-    <div class="form-line">
-      <mat-form-field>
-        <mat-label>Ano</mat-label>
-        <input required subscriptSizing="dynamic" type="number" matInput placeholder="Ano (Ex: 2020)" formControlName="ano">
-      </mat-form-field>
-      <span class="spacer"></span>
-      <mat-form-field>
-        <mat-label>Km</mat-label>
-        <input subscriptSizing="dynamic" type="number" matInput placeholder="Quilometragem (Ex: 1300)" formControlName="km">
-      </mat-form-field>
-    </div>
-    <div class="form-line">
-      <mat-form-field>
-        <mat-label>Estado</mat-label>
-        <input required subscriptSizing="dynamic" type="input" matInput placeholder="Estado" formControlName="estado">
-      </mat-form-field>
-      <span class="spacer"></span>
-      <mat-form-field>
-        <mat-label>Valor</mat-label>
-        <input subscriptSizing="dynamic" type="number" matInput placeholder="Valor" formControlName="valor">
-      </mat-form-field>
-    </div>
-    <div class="form-line">
-      <mat-form-field>
-        <mat-label>Foto</mat-label>
-        <input subscriptSizing="dynamic" type="input" matInput placeholder="foto" formControlName="foto">
-      </mat-form-field>
-    </div>
-    <div class="button">
-      <button [disabled]="nome?.invalid || marca?.invalid" type="submit" mat-stroked-button>Continuar</button>
-    </div>
-  </form>
-</div>
-<!--// nome marca
-// ano km
-// estado valor
-// foto-->

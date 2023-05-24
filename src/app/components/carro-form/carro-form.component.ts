@@ -4,10 +4,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { catchError, retry, throwError } from 'rxjs';
 import { Carro } from 'src/app/models/carro';
 import { CarrosService } from 'src/app/services/carros.service';
-// nome marca
-// ano km
-// estado valor
-// foto
 
 @Component({
   selector: 'app-carro-form',
@@ -16,31 +12,63 @@ import { CarrosService } from 'src/app/services/carros.service';
 })
 export class CarroFormComponent {
   form: FormGroup;
+  isCreated : boolean;
+  carroId : number | undefined;
 
   constructor(
     public dialogRef: MatDialogRef<CarroFormComponent>,
     private fb: FormBuilder,
     private carrosService: CarrosService,
-    @Inject(MAT_DIALOG_DATA) public carro: Carro,) {
+    @Inject(MAT_DIALOG_DATA) public data: {carro?: Carro},) {
 
     this.form = this.fb.group({
-      nome: [this.carro?.nome ?? '', Validators.required],
-      marca: [this.carro?.marca ?? '', Validators.required],
-      ano: [this.carro?.ano ?? '', Validators.required],
-      km: [this.carro?.ano ?? '', Validators.required],
-      estado: [this.carro?.estado ?? '', Validators.required],
-      valor: [this.carro?.valor ?? '', Validators.required],
-      foto: [this.carro?.foto ?? '', Validators.required]
-    })
+      nome: [data?.carro?.nome ?? '', Validators.required],
+      marca: [data?.carro?.marca ?? '', Validators.required],
+      ano: [data?.carro?.ano ?? '', Validators.required],
+      km: [data?.carro?.ano ?? '', Validators.required],
+      estado: [data?.carro?.estado ?? '', Validators.required],
+      valor: [data?.carro?.valor ?? '', Validators.required],
+      foto: [data?.carro?.foto ?? '', Validators.required]
+    });
 
+    if(data?.carro) {
+      this.isCreated = true;
+      this.carroId = data.carro.id;
+    } else {
+      this.isCreated = false;
+    }
   }
 
-  public onNoClick(): void {
+  onNoClick(): void {
     this.dialogRef.close();
   }
 
-  public createCarro(): void {
+  saveCarro(): void {
+    if(this.isCreated)
+      this.updateCarro();
+    else
+      this.createCarro();
+  }
+
+  updateCarro(): void {
+    if(!this.carroId) {
+      console.error("carro.id is not defined");
+      return;
+    }
     const carro : Carro = this.buildCarro();
+    this.carrosService.putCarro(this.carroId, carro)
+      .pipe(retry(1), catchError(error => {
+        alert(error.message);
+        return throwError(() => {
+          return error.message;
+        })
+      })).subscribe(s => {
+        window.location.reload();
+      });
+  }
+
+  createCarro(): void {
+    const carro: Carro = this.buildCarro();
     this.carrosService.postCarro(carro)
       .pipe(retry(1), catchError(error => {
         alert(error.message);
@@ -48,9 +76,28 @@ export class CarroFormComponent {
           return error.message;
         })
       })).subscribe(s => {
-        console.log(s)
         window.location.reload();
       });
+  }
+
+  deleteCarro(): void {
+    if(!this.carroId) {
+      console.error("carro.id is not defined");
+      return;
+    }
+    this.carrosService.deleteCarro(this.carroId)
+      .pipe(retry(1), catchError(error => {
+        alert(error.message);
+        return throwError(() => {
+          return error.message;
+        })
+      })).subscribe(s => {
+        window.location.reload();
+      })
+  }
+  
+  isValid(): boolean {
+    return Boolean(this.nome?.valid && this.marca?.valid && this.ano?.valid && this.km?.valid && this.estado?.valid && this.valor?.valid && this.foto?.valid);
   }
 
   private buildCarro(): Carro {
@@ -64,7 +111,7 @@ export class CarroFormComponent {
       foto: this.foto?.value
     };
   }
-
+  
   get nome() : AbstractControl<any,any> | null {
     return this.form.get('nome'); 
   }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { catchError, retry, throwError } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { AuthService } from '../../services/auth.service';
 
@@ -24,19 +25,21 @@ export class LoginFormComponent {
     })
   }
 
-  public login() : void {
+  login() : void {
     const user: User = this.form.value;
 
     this.authService.login(user)
-      .subscribe(
-        a => {
-          console.log("User is logged in");
+      .pipe(retry(1), catchError(error => {
+        alert(error.message);
+        return throwError(() => {
+          return error.message;
+        })}
+      )).subscribe(() => {
           window.location.reload();
-        }
-      );
+        });
   }
 
-  public onNoClick(): void {
+  onNoClick(): void {
     this.dialogRef.close();
   }
 
