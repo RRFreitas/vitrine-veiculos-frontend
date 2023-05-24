@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { catchError, retry, throwError } from 'rxjs';
 import { User } from 'src/app/models/user';
@@ -18,11 +18,11 @@ export class LoginFormComponent {
     private fb: FormBuilder,
     private authService: AuthService) {
     
-      this.form = this.fb.group({
+    this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
-    
     })
+
   }
 
   login() : void {
@@ -43,12 +43,12 @@ export class LoginFormComponent {
     this.dialogRef.close();
   }
 
-  get username() : AbstractControl<any,any> | null {
-    return this.form.get('username'); 
+  get username() : FormControl {
+    return this.form.get('username') as FormControl;
   }
 
-  get password() : AbstractControl<any,any> | null {
-    return this.form.get('password'); 
+  get password() : FormControl {
+    return this.form.get('password') as FormControl; 
   }
 
 }

@@ -3,10 +3,14 @@
     width: 100%;
 }
 
+.form-line app-input-field {
+    width: 50%;
+}
+
 .spacer {
     flex: 1 1 auto;
     flex-direction: row;
-    flex-grow: 1;
+    flex-grow: 0;
     min-width: 3px;
 }
 

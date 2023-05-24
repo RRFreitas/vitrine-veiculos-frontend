@@ -6,11 +6,6 @@
   font-weight: 300;
 }
 
-mat-form-field {
-  width: 100%;
-  min-width: 300px;
-}
-
 .button button{
   width: 100%;
 }
@@ -33,6 +28,8 @@ mat-form-field {
 
 p {
   margin: 0 0 0 0;
+  width: 100%;
+  min-width: 300px;
 }
 
 .reset-pass a{

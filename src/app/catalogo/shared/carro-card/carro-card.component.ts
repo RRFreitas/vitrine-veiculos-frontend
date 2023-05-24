@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { Carro } from '../../../models/carro';
 import { CarroFormComponent } from '../../carro-form/carro-form.component';
 
@@ -11,9 +12,11 @@ import { CarroFormComponent } from '../../carro-form/carro-form.component';
 export class CarroCardComponent {
   @Input() carro?: Carro;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, public authService: AuthService) {}
 
   public openCarroForm(): void {
+    if(!this.authService.isLoggedIn())
+      return;
     const dialogRef = this.dialog.open(CarroFormComponent, {
       data: {
         carro: this.carro

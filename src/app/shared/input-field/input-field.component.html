@@ -1,5 +1,5 @@
 <mat-form-field color="primary">
-    <mat-label>{{label}}</mat-label>
+    <mat-label *ngIf="label">{{label}}</mat-label>
     <input color="primary" subscriptSizing="dynamic" [type]="type" matInput [placeholder]="placeholder" [formControl]="control">
     <mat-icon *ngIf="iconName" matSuffix>{{iconName}}</mat-icon>
 </mat-form-field>
