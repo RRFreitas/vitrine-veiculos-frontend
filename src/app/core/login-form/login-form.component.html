@@ -7,16 +7,10 @@
 <div mat-dialog-content>
     <form [formGroup]="form" (ngSubmit)="login()">
         <p>
-          <!--<mat-form-field>
-            <input required subscriptSizing="dynamic" type="input" matInput placeholder="Usuário" formControlName="username">
-          </mat-form-field>-->
           <app-input-field placeholder="Usuário" [control]="username"/>
         </p>
         <p>
           <app-input-field placeholder="Senha" type="password" [control]="password" />
-          <!--<mat-form-field>
-            <input subscriptSizing="dynamic" type="password" matInput placeholder="Senha" formControlName="password">
-          </mat-form-field>-->
         </p>
         <p class="reset-pass">
           <a href="/">

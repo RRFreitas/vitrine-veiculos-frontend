@@ -14,7 +14,7 @@ export class CarroCardComponent {
 
   constructor(public dialog: MatDialog, public authService: AuthService) {}
 
-  public openCarroForm(): void {
+  openCarroForm(): void {
     if(!this.authService.isLoggedIn())
       return;
     const dialogRef = this.dialog.open(CarroFormComponent, {

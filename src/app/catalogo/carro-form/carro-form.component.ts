@@ -11,21 +11,22 @@ import { CarrosService } from 'src/app/catalogo/services/carros.service';
   styleUrls: ['./carro-form.component.css']
 })
 export class CarroFormComponent {
-  form: FormGroup;
-  isCreated: boolean;
+  form!: FormGroup;
+  isCreated!: boolean;
   carroId: number | undefined;
 
   constructor(
     public dialogRef: MatDialogRef<CarroFormComponent>,
     private fb: FormBuilder,
     private carrosService: CarrosService,
-    @Inject(MAT_DIALOG_DATA) public data: {carro?: Carro},) {
+    @Inject(MAT_DIALOG_DATA) public data: {carro?: Carro},) {}
 
+  ngOnInit(): void {
     this.form = this.buildForm()
 
-    if(data?.carro) {
+    if(this.data?.carro) {
       this.isCreated = true;
-      this.carroId = data.carro.id;
+      this.carroId = this.data.carro.id;
     } else {
       this.isCreated = false;
     }

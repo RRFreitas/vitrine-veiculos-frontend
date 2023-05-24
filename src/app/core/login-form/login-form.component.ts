@@ -11,18 +11,18 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent {
-  form: FormGroup;
+  form!: FormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<LoginFormComponent>,
     private fb: FormBuilder,
-    private authService: AuthService) {
-    
+    private authService: AuthService) {}
+
+  ngOnInit() : void {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     })
-
   }
 
   login() : void {

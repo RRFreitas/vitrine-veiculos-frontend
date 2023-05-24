@@ -12,21 +12,18 @@ export class NavbarComponent {
 
   constructor(public dialog: MatDialog, private authService : AuthService) {}
 
-  public openDialog(): void {
+  openDialog(): void {
     const dialogRef = this.dialog.open(LoginFormComponent, {});
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    dialogRef.afterClosed().subscribe(result => {});
   }
 
-  public isLoggedIn() {
+  isLoggedIn() {
     return this.authService.isLoggedIn();
   }
 
-  public logout() {
+  logout() {
     this.authService.logout()
-    console.log("Logged out");
     window.location.reload();
   }
 }
