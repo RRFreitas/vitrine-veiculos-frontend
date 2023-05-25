@@ -45,3 +45,5 @@ $ ng test
 
 ### Uso
 - Para editar ou deletar um carro, clique no card do carro.
+
+<img src="https://i.imgur.com/uhfiX1p.png)" style="max-width: 1000px;"/>
