@@ -1,27 +1,47 @@
-# VitrineVeiculosFrontend
+# Teste Prático Full Stack Python (Frontend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+### Tecnologias utilizadas no Frontend:
+- Angular 16
 
-## Development server
+### Casos de uso:
+- Listagem, criação, edição e remoção de veículos
+- Login de admin com token JWT
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Para rodar o projeto é preciso:
+- Node 20.2.0
 
-## Code scaffolding
+### Instalando o projeto
+```shell
+# Clone o repositório
+$ git clone https://github.com/RRFreitas/vitrine-veiculos-frontend.git 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Acesse o diretório do projeto
+$ cd vitrine-veiculos-frontend
 
-## Build
+# Instale as dependências
+$ npm ci
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Configuração
+Na paste src/environments há 3 arquivos de configuração de variáveis de ambiente para cada ambiente. Altere de acordo com sua preferência
+```javascript
+export const environment = {
+    production: false,
+    API_URL: 'http://127.0.0.1:8000'
+};
 
-## Running unit tests
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Rodando o projeto
+```shell
+# Certifique-se que o npm instalou o Angular CLI
+$ ng serve
+```
 
-## Running end-to-end tests
+### Para rodar os testes:
+```shell
+$ ng test
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Uso
+- Para editar ou deletar um carro, clique no card do carro.
