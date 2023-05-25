@@ -13,6 +13,7 @@ import { LoginFormComponent } from './login-form.component';
 describe('LoginFormComponent', () => {
   let component: LoginFormComponent;
   let fixture: ComponentFixture<LoginFormComponent>;
+  let button: HTMLButtonElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -25,10 +26,22 @@ describe('LoginFormComponent', () => {
     });
     fixture = TestBed.createComponent(LoginFormComponent);
     component = fixture.componentInstance;
+    button= fixture.nativeElement.querySelector('button');
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('submit button should be disabled if inputs are empty', () => {
+    expect(button.disabled).toBeTrue();
+  })
+  
+  it('submit button should be enabled if inputs are filled', () => {
+    component.form.setValue({username: 'user', password: 'pass'})
+    fixture.detectChanges();
+    expect(component.form.valid).toBeTrue();
+    expect(button.disabled).toBeFalse();
+  })
 });
